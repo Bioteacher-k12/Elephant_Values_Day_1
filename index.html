@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biodiversity Values &amp; Human-Elephant Conflict</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans & Merriweather -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['Merriweather', 'serif'],
+          },
+          colors: {
+            forest: {
+              50: '#f2f8f5',
+              100: '#dfeee6',
+              700: '#2d6a4f',
+              800: '#23533e',
+              900: '#1b4332',
+              950: '#112a1f',
+            },
+            warmamber: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            },
+            stonebg: '#fafaf8',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #fafaf8;
+      color: #1f2937;
+    }
+    .fade-transition {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .fade-out-state {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- =================================================================== -->
+  <!-- STICKY TOP HEADER                                                   -->
+  <!-- =================================================================== -->
+  <header class="sticky top-0 z-40 bg-forest-900 text-white shadow-md">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+      <!-- Title & Target Goal -->
+      <div class="flex items-start sm:items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-warmamber-600/20 border border-warmamber-500/40 flex items-center justify-center shrink-0">
+          <!-- Elephant Emblem SVG -->
+          <svg class="w-6 h-6 text-warmamber-500" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true">
+            <path d="M51 24c-1.5-5.5-6.5-9-12.5-9H25c-6.6 0-12 5.4-12 12v7c0 3.3-2.2 6-5 6v4c5 0 9-4 9-9v-3c1.5 1.8 3.7 3 6 3h1v14h6V36h10v13h6V35.5c2.4-1.2 4-3.7 4-6.5v-1h3c1.7 0 3 1.3 3 3v7h4v-7c0-3.5-2.5-6.4-6-7zM21 25a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-base sm:text-xl font-extrabold tracking-tight leading-snug">
+            Biodiversity Values &amp; Human-Elephant Conflict
+          </h1>
+          <p class="text-xs text-forest-100/90 font-medium">
+            Target: Decide how you value living things and analyze human-elephant conflict
+          </p>
+        </div>
+      </div>
+
+      <!-- Auto-Save Indicator & Live Progress Bar -->
+      <div class="flex flex-wrap items-center gap-2.5">
+        <span id="autosave-status" class="inline-flex items-center gap-1.5 text-xs font-semibold text-forest-100 bg-forest-950/75 border border-forest-700/80 rounded-xl px-3 py-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Auto-saved locally</span>
+        </span>
+
+        <!-- Live Completion Progress Bar -->
+        <div class="bg-forest-950/75 border border-forest-700/80 rounded-xl px-3 py-1.5 flex items-center gap-2">
+          <span class="text-xs text-forest-100/85">Progress:</span>
+          <span id="progress-text" class="text-xs font-bold text-warmamber-500">0%</span>
+          <div class="w-16 sm:w-20 h-2 bg-forest-950 rounded-full overflow-hidden border border-forest-700">
+            <div id="progress-bar" class="h-full bg-warmamber-500 transition-all duration-300" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================================================================== -->
+  <!-- MAIN CONTENT WORKSPACE                                              -->
+  <!-- =================================================================== -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8">
+
+    <!-- =================================================================== -->
+    <!-- PART 1: REBUILDING GORONGOSA NATIONAL PARK                          -->
+    <!-- =================================================================== -->
+    <section class="bg-white rounded-2xl border border-stone-200 p-5 sm:p-7 shadow-xs space-y-6">
+      <div class="border-b border-stone-200 pb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-warmamber-700">Part 1 &bull; Conservation Case Study</span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-forest-900 mt-1">Rebuilding Gorongosa National Park</h2>
+      </div>
+
+      <!-- Embedded Google Drive Video Section -->
+      <div class="rounded-2xl bg-forest-50/70 border border-forest-700/20 p-4 sm:p-5 space-y-3.5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <div>
+            <h3 class="text-base font-bold text-forest-900">Field Video: Gorongosa Restoration</h3>
+            <p class="text-xs text-stone-600">Watch the documentary clip below to observe how scientists and local residents are restoring Gorongosa.</p>
+          </div>
+          <a
+            href="https://drive.google.com/file/d/19GhcYnrvcijpkRF2sxEE9f_JxQNYctIE/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-forest-900 hover:bg-forest-800 text-white text-xs font-bold shadow-xs transition self-start sm:self-auto"
+          >
+            <svg class="w-4 h-4 text-warmamber-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <span>Watch Gorongosa Video in Google Drive</span>
+          </a>
+        </div>
+
+        <div class="relative w-full overflow-hidden rounded-xl border border-stone-300 bg-forest-950 aspect-video shadow-inner">
+          <iframe
+            src="https://drive.google.com/file/d/19GhcYnrvcijpkRF2sxEE9f_JxQNYctIE/preview"
+            class="absolute inset-0 w-full h-full border-0"
+            allow="autoplay; fullscreen"
+            title="Gorongosa National Park Restoration Video"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Overview & Toggleable Context Hint -->
+      <div class="space-y-3">
+        <p class="text-sm sm:text-[15px] text-stone-700 leading-relaxed">
+          Located in central Mozambique at the southern tip of the Great Rift Valley, <strong>Gorongosa National Park</strong> suffered a catastrophic collapse during decades of civil conflict and unregulated poaching—losing more than 90% of its large wildlife populations. Today, a long-term conservation partnership is rebuilding the park through active ecosystem restoration, wildlife reintroductions, and deep community partnerships that connect park health to human well-being.
+        </p>
+
+        <div>
+          <button
+            type="button"
+            onclick="toggleVisibility('context-hint-box', this, 'Need a Context Hint?', 'Hide Context Hint')"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-warmamber-50 hover:bg-warmamber-100 border border-warmamber-500/40 text-warmamber-700 text-xs font-bold transition cursor-pointer"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Need a Context Hint?</span>
+          </button>
+
+          <div id="context-hint-box" class="hidden mt-3 rounded-xl bg-warmamber-50/80 border border-warmamber-500/30 p-4 text-xs sm:text-sm text-stone-700 space-y-1.5">
+            <div class="font-bold text-warmamber-700">Context Hint: Ecological &amp; Community Pillars</div>
+            <ul class="list-disc list-inside space-y-1">
+              <li><strong>Rebuilding Wildlife &amp; Ecosystems:</strong> Recruiting and training local rangers to stop poaching, reintroducing herbivores and predators to restore food webs, and tracking biodiversity recovery with scientists.</li>
+              <li><strong>Community Value:</strong> Creating sustainable tourism and park employment, funding local healthcare clinics and schools, and helping farmers grow shade-grown coffee that protects Mount Gorongosa’s rainforest.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two Numbered Reflection Textareas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-1">
+        <div class="space-y-2">
+          <label for="p1-q1" class="block text-sm font-bold text-forest-900">
+            1. What are some of the ways Gorongosa is being rebuilt?
+          </label>
+          <textarea
+            id="p1-q1"
+            rows="4"
+            placeholder="Describe specific wildlife, habitat, and management strategies used to restore Gorongosa..."
+            class="w-full rounded-xl border border-stone-300 bg-stonebg p-3 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest-700"
+          ></textarea>
+        </div>
+
+        <div class="space-y-2">
+          <label for="p1-q2" class="block text-sm font-bold text-forest-900">
+            2. What is some of the value it has to the communities there?
+          </label>
+          <textarea
+            id="p1-q2"
+            rows="4"
+            placeholder="Explain the economic, social, health, and environmental benefits Gorongosa brings to surrounding communities..."
+            class="w-full rounded-xl border border-stone-300 bg-stonebg p-3 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest-700"
+          ></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PART 2: HOW DO YOU VALUE BIODIVERSITY?                              -->
+    <!-- =================================================================== -->
+    <section class="bg-white rounded-2xl border border-stone-200 p-5 sm:p-7 shadow-xs space-y-6">
+      <div class="border-b border-stone-200 pb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-warmamber-700">Part 2 &bull; Ecological &amp; Ethical Frameworks</span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-forest-900 mt-1">How Do You Value Biodiversity?</h2>
+        <p class="text-xs sm:text-sm text-stone-600 mt-1">
+          Explore the four biodiversity value cards below, test your understanding with the scenario Quick Check, and complete your Personal Reflection.
+        </p>
+      </div>
+
+      <!-- 2x2 Grid of 4 Interactive Biodiversity Value Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Card 1: Environmental Value -->
+        <button
+          type="button"
+          onclick="selectBioCard('environmental')"
+          id="bio-card-environmental"
+          class="text-left rounded-2xl border-2 border-forest-900 bg-forest-50/75 p-5 shadow-xs transition hover:shadow-md cursor-pointer space-y-2"
+        >
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-2 font-extrabold text-forest-900 text-base">
+              <span class="w-8 h-8 rounded-lg bg-forest-900 text-white flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </span>
+              Environmental Value
+            </span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-forest-700">Ecological Role</span>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+            Species has value because other organisms and ecosystems rely on it.
+          </p>
+        </button>
+
+        <!-- Card 2: Aesthetic Value -->
+        <button
+          type="button"
+          onclick="selectBioCard('aesthetic')"
+          id="bio-card-aesthetic"
+          class="text-left rounded-2xl border border-stone-200 bg-stonebg p-5 shadow-xs transition hover:border-forest-700 hover:shadow-md cursor-pointer space-y-2"
+        >
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-2 font-extrabold text-forest-900 text-base">
+              <span class="w-8 h-8 rounded-lg bg-warmamber-600 text-white flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </span>
+              Aesthetic Value
+            </span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-warmamber-700">Beauty &amp; Wonder</span>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+            Species has value because it is visually striking, inspiring, or attractive in some way.
+          </p>
+        </button>
+
+        <!-- Card 3: Economic Value -->
+        <button
+          type="button"
+          onclick="selectBioCard('economic')"
+          id="bio-card-economic"
+          class="text-left rounded-2xl border border-stone-200 bg-stonebg p-5 shadow-xs transition hover:border-forest-700 hover:shadow-md cursor-pointer space-y-2"
+        >
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-2 font-extrabold text-forest-900 text-base">
+              <span class="w-8 h-8 rounded-lg bg-forest-700 text-white flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </span>
+              Economic Value
+            </span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-forest-700">Financial Benefit</span>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+            Species has value because it provides financial or material benefits.
+          </p>
+        </button>
+
+        <!-- Card 4: Intrinsic Value -->
+        <button
+          type="button"
+          onclick="selectBioCard('intrinsic')"
+          id="bio-card-intrinsic"
+          class="text-left rounded-2xl border border-stone-200 bg-stonebg p-5 shadow-xs transition hover:border-forest-700 hover:shadow-md cursor-pointer space-y-2"
+        >
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-2 font-extrabold text-forest-900 text-base">
+              <span class="w-8 h-8 rounded-lg bg-warmamber-700 text-white flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </span>
+              Intrinsic Value
+            </span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-warmamber-700">Inherent Worth</span>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+            Species has value in and of itself, independent of any direct human benefit.
+          </p>
+        </button>
+      </div>
+
+      <!-- Dynamic Elephant Example Spotlight for Clicked Card -->
+      <div id="bio-card-spotlight" class="rounded-xl bg-forest-50 border border-forest-700/20 p-4 text-xs sm:text-sm text-stone-700">
+        <div id="spotlight-title" class="font-bold text-forest-900">Elephant Spotlight &mdash; Environmental Value</div>
+        <p id="spotlight-body" class="mt-1">
+          Elephants act as keystone ecosystem engineers: they disperse seeds across miles of savanna and forest, clear dense woody brush to maintain grasslands for grazing herds, and excavate dry riverbeds to uncover water for other wildlife.
+        </p>
+      </div>
+
+      <!-- QUICK CHECK CARD (Collapses smoothly once all 4 are checked & correct) -->
+      <div id="quick-check-card" class="fade-transition rounded-2xl bg-stonebg border border-stone-200 p-5 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h3 class="text-base sm:text-lg font-extrabold text-forest-900">Quick Check: Match the Scenario</h3>
+            <p class="text-xs sm:text-sm text-stone-600">
+              Match each conservation scenario to the biodiversity value it best represents, then click <strong>Check Answers</strong>.
+            </p>
+          </div>
+          <button
+            type="button"
+            onclick="checkQuickCheck()"
+            class="self-start sm:self-auto px-4 py-2 rounded-xl bg-forest-900 hover:bg-forest-800 text-white text-xs sm:text-sm font-bold shadow-xs transition cursor-pointer"
+          >
+            Check Answers
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Scenario 1 -->
+          <div class="bg-white rounded-xl border border-stone-200 p-4 space-y-2">
+            <p class="text-xs sm:text-sm text-stone-800">
+              <strong>1.</strong> Wildlife tourism lodges and safari guides earn sustainable income when visitors travel to see wild elephant herds.
+            </p>
+            <select id="qc-1" class="w-full rounded-lg border border-stone-300 bg-stonebg px-3 py-2 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-forest-700">
+              <option value="">-- Choose Value --</option>
+              <option value="environmental">Environmental Value</option>
+              <option value="aesthetic">Aesthetic Value</option>
+              <option value="economic">Economic Value</option>
+              <option value="intrinsic">Intrinsic Value</option>
+            </select>
+            <p id="qc-1-fb" class="text-xs font-semibold hidden"></p>
+          </div>
+
+          <!-- Scenario 2 -->
+          <div class="bg-white rounded-xl border border-stone-200 p-4 space-y-2">
+            <p class="text-xs sm:text-sm text-stone-800">
+              <strong>2.</strong> Forest elephants disperse the seeds of large fruit trees that depend on elephant digestion to germinate and grow.
+            </p>
+            <select id="qc-2" class="w-full rounded-lg border border-stone-300 bg-stonebg px-3 py-2 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-forest-700">
+              <option value="">-- Choose Value --</option>
+              <option value="environmental">Environmental Value</option>
+              <option value="aesthetic">Aesthetic Value</option>
+              <option value="economic">Economic Value</option>
+              <option value="intrinsic">Intrinsic Value</option>
+            </select>
+            <p id="qc-2-fb" class="text-xs font-semibold hidden"></p>
+          </div>
+
+          <!-- Scenario 3 -->
+          <div class="bg-white rounded-xl border border-stone-200 p-4 space-y-2">
+            <p class="text-xs sm:text-sm text-stone-800">
+              <strong>3.</strong> Photographers, filmmakers, and artists celebrate the beauty, social grace, and majesty of elephant families.
+            </p>
+            <select id="qc-3" class="w-full rounded-lg border border-stone-300 bg-stonebg px-3 py-2 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-forest-700">
+              <option value="">-- Choose Value --</option>
+              <option value="environmental">Environmental Value</option>
+              <option value="aesthetic">Aesthetic Value</option>
+              <option value="economic">Economic Value</option>
+              <option value="intrinsic">Intrinsic Value</option>
+            </select>
+            <p id="qc-3-fb" class="text-xs font-semibold hidden"></p>
+          </div>
+
+          <!-- Scenario 4 -->
+          <div class="bg-white rounded-xl border border-stone-200 p-4 space-y-2">
+            <p class="text-xs sm:text-sm text-stone-800">
+              <strong>4.</strong> Biologists and ethicists state that elephants have a right to exist simply because they are living beings, regardless of human use.
+            </p>
+            <select id="qc-4" class="w-full rounded-lg border border-stone-300 bg-stonebg px-3 py-2 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-forest-700">
+              <option value="">-- Choose Value --</option>
+              <option value="environmental">Environmental Value</option>
+              <option value="aesthetic">Aesthetic Value</option>
+              <option value="economic">Economic Value</option>
+              <option value="intrinsic">Intrinsic Value</option>
+            </select>
+            <p id="qc-4-fb" class="text-xs font-semibold hidden"></p>
+          </div>
+        </div>
+
+        <div id="qc-status-banner" class="hidden rounded-xl p-3 text-xs sm:text-sm font-bold"></div>
+      </div>
+
+      <!-- PERSONAL REFLECTION CARD (Always visible & unlocked from the start) -->
+      <div id="personal-reflection-card" class="rounded-2xl border-2 border-forest-700/30 bg-forest-50/45 p-5 sm:p-6 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-forest-700">
+              Your Perspective
+            </span>
+            <h3 class="text-lg font-extrabold text-forest-900 mt-0.5">Personal Reflection</h3>
+          </div>
+          <button
+            type="button"
+            id="review-qc-link"
+            onclick="toggleReviewQuickCheck()"
+            class="hidden self-start sm:self-auto text-xs font-bold text-forest-700 hover:text-forest-900 underline cursor-pointer"
+          >
+            Review Quick Check
+          </button>
+        </div>
+
+        <div class="space-y-3">
+          <label class="block text-sm font-bold text-forest-900">
+            Select all biodiversity values that reflect your own attitude toward elephants, then explain why those values resonate with you:
+          </label>
+
+          <!-- Multi-Select Pill Buttons (1 to 4 values) -->
+          <div class="flex flex-wrap gap-2.5" role="group" aria-label="Select one or more biodiversity values">
+            <button
+              type="button"
+              onclick="togglePersonalValue('Environmental Value')"
+              data-value="Environmental Value"
+              class="multi-val-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-700 hover:border-forest-700 transition cursor-pointer"
+            >
+              <span class="pill-check hidden text-warmamber-400 font-extrabold">&#10003;</span>
+              <span>Environmental Value</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="togglePersonalValue('Aesthetic Value')"
+              data-value="Aesthetic Value"
+              class="multi-val-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-700 hover:border-forest-700 transition cursor-pointer"
+            >
+              <span class="pill-check hidden text-warmamber-400 font-extrabold">&#10003;</span>
+              <span>Aesthetic Value</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="togglePersonalValue('Economic Value')"
+              data-value="Economic Value"
+              class="multi-val-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-700 hover:border-forest-700 transition cursor-pointer"
+            >
+              <span class="pill-check hidden text-warmamber-400 font-extrabold">&#10003;</span>
+              <span>Economic Value</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="togglePersonalValue('Intrinsic Value')"
+              data-value="Intrinsic Value"
+              class="multi-val-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-700 hover:border-forest-700 transition cursor-pointer"
+            >
+              <span class="pill-check hidden text-warmamber-400 font-extrabold">&#10003;</span>
+              <span>Intrinsic Value</span>
+            </button>
+          </div>
+
+          <p id="selected-values-readout" class="text-xs font-semibold text-forest-800">
+            Selected values: <span class="italic text-stone-500">None selected yet (click one or more pills above)</span>
+          </p>
+
+          <textarea
+            id="p2-reflection"
+            rows="4"
+            placeholder="Explain why the biodiversity values you selected resonate with your perspective on elephants..."
+            class="w-full rounded-xl border border-stone-300 bg-white p-3 text-sm focus:outline-none focus:ring-2 focus:ring-forest-700"
+          ></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PART 3: HUMAN-ELEPHANT CONFLICT & TWO-LENS ANALYSIS                 -->
+    <!-- =================================================================== -->
+    <section class="bg-white rounded-2xl border border-stone-200 p-5 sm:p-7 shadow-xs space-y-6">
+      <div class="border-b border-stone-200 pb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-warmamber-700">Part 3 &bull; Informational Reading &amp; Perspective Synthesis</span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-forest-900 mt-1">Human-Elephant Conflict &amp; Two-Lens Analysis</h2>
+      </div>
+
+      <!-- Two-Section Informational Reading -->
+      <article class="rounded-2xl bg-stonebg border border-stone-200 p-5 sm:p-7 space-y-6">
+        <div class="space-y-3">
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-forest-900 border-l-4 border-warmamber-600 pl-3.5">
+            Shrinking Habitats &amp; Agricultural Conflict
+          </h3>
+          <p class="font-serif text-sm sm:text-[15px] text-stone-700 leading-relaxed">
+            As farming, roadways, and towns expand across Africa and Asia, wild elephant habitats are increasingly broken into smaller, disconnected patches. Blocked from traditional seasonal routes and natural foraging zones, elephants frequently wander into nearby farms in search of food and water. A single adult elephant eats up to <strong>450 kg (nearly 1,000 pounds) of vegetation each day</strong> and tramples roughly the same amount while moving through cultivated fields, meaning one herd can wipe out a family’s harvest overnight. This creates starkly different experiences: while viewers watching wildlife films from afar feel deep affection and admiration for elephants, rural residents living next to wildlife corridors often endure fear, sleepless nights defending crops, and severe financial hardship.
+          </p>
+        </div>
+
+        <div class="space-y-3 pt-4 border-t border-stone-200">
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-forest-900 border-l-4 border-forest-900 pl-3.5">
+            Impacts on Local Communities &amp; Elephant Populations
+          </h3>
+          <p class="font-serif text-sm sm:text-[15px] text-stone-700 leading-relaxed">
+            Rural households and commercial farms bear heavy costs from these encounters. Smallholder families can lose an entire year’s food supply and income in a single raid, while commercial agriculture also suffers major damage—in Riau, Indonesia alone, elephant damage to oil palm and timber plantations costs an estimated <strong>$105 million per year</strong>. Direct confrontations can also turn deadly: elephants kill <strong>more than 100 people annually in India</strong>, and killed <strong>over 200 people in Kenya across a seven-year period</strong>. Faced with lost harvests and human fatalities, local residents and wildlife officials often resort to retaliatory killings, including authorities shooting <strong>50 to 120 “problem” elephants each year in Kenya</strong> and fatal poisonings near plantations in Indonesia. Alongside habitat loss and ivory poaching, these conflicts have fueled steep century-long population declines: over the past 100 years, African elephants have dropped from <strong>3–5 million down to 470,000–690,000</strong>, while Asian elephants have declined from roughly <strong>100,000 down to 35,000–50,000</strong>.
+          </p>
+        </div>
+      </article>
+
+      <!-- Interactive Side-by-Side Two-Lens Analysis T-Chart -->
+      <div class="space-y-3.5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h3 class="text-base sm:text-lg font-extrabold text-forest-900">Two-Lens Analysis T-Chart</h3>
+            <p class="text-xs sm:text-sm text-stone-600">Compare how each group experiences and values elephants using evidence from the reading.</p>
+          </div>
+          <button
+            type="button"
+            onclick="toggleVisibility('tchart-evidence-box', this, 'Reveal Key Evidence', 'Hide Key Evidence')"
+            class="self-start sm:self-auto px-3.5 py-2 rounded-xl bg-forest-900 hover:bg-forest-800 text-white text-xs font-bold shadow-xs transition cursor-pointer"
+          >
+            <span>Reveal Key Evidence</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Lens 1 -->
+          <div class="rounded-2xl border border-forest-700/25 bg-forest-50/45 p-4 space-y-2">
+            <label for="lens-western" class="block text-sm font-extrabold text-forest-900">
+              Lens 1: Western Observer Perspective
+              <span class="block text-xs font-normal text-stone-600 mt-0.5">Emotional attitude, distance from risk, and primary values</span>
+            </label>
+            <textarea
+              id="lens-western"
+              rows="4"
+              placeholder="Summarize how Western observers view and experience elephants according to the reading..."
+              class="w-full rounded-xl border border-stone-300 bg-white p-3 text-sm focus:outline-none focus:ring-2 focus:ring-forest-700"
+            ></textarea>
+          </div>
+
+          <!-- Lens 2 -->
+          <div class="rounded-2xl border border-warmamber-500/35 bg-warmamber-50/45 p-4 space-y-2">
+            <label for="lens-local" class="block text-sm font-extrabold text-warmamber-700">
+              Lens 2: Local Small Farmer Perspective
+              <span class="block text-xs font-normal text-stone-600 mt-0.5">Daily crop losses, safety threats, and economic pressure</span>
+            </label>
+            <textarea
+              id="lens-local"
+              rows="4"
+              placeholder="Summarize the daily costs, dangers, and pressures faced by local small farmers..."
+              class="w-full rounded-xl border border-stone-300 bg-white p-3 text-sm focus:outline-none focus:ring-2 focus:ring-warmamber-600"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Toggleable Sample Key Evidence Box -->
+        <div id="tchart-evidence-box" class="hidden rounded-xl bg-stone-100 border border-stone-300 p-4 text-xs sm:text-sm text-stone-700">
+          <div class="font-bold text-forest-900 mb-2">Sample Evidence from the Reading for Self-Check:</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <div class="font-bold text-forest-800">Lens 1 (Western Observer):</div>
+              <ul class="list-disc list-inside mt-1 space-y-1">
+                <li>Experiences elephants from afar through wildlife films and conservation media.</li>
+                <li>Feels deep affection and admiration without bearing personal financial or physical risk.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-bold text-warmamber-700">Lens 2 (Local Small Farmer):</div>
+              <ul class="list-disc list-inside mt-1 space-y-1">
+                <li>Faces fear, sleepless nights, and overnight loss of harvests (450 kg/day eaten plus trampling).</li>
+                <li>Suffers $105M/year plantation losses in Riau, Indonesia, and fatal risks (100+ deaths/year in India; 200+ in Kenya over 7 years).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Article Synthesis Questions -->
+      <div class="space-y-4 pt-3 border-t border-stone-200">
+        <h3 class="text-base sm:text-lg font-extrabold text-forest-900">Article Synthesis Questions</h3>
+
+        <div class="space-y-2">
+          <label for="p3-q1" class="block text-sm font-bold text-forest-900">
+            1. What is causing the decline in elephants according to the article?
+          </label>
+          <textarea
+            id="p3-q1"
+            rows="3"
+            placeholder="Write your response using evidence from the reading..."
+            class="w-full rounded-xl border border-stone-300 bg-stonebg p-3 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest-700"
+          ></textarea>
+        </div>
+
+        <div class="space-y-2">
+          <label for="p3-q2" class="block text-sm font-bold text-forest-900">
+            2. What value is placed on the elephants according to this article?
+          </label>
+          <textarea
+            id="p3-q2"
+            rows="3"
+            placeholder="Write your response using evidence from the reading..."
+            class="w-full rounded-xl border border-stone-300 bg-stonebg p-3 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest-700"
+          ></textarea>
+        </div>
+
+        <div class="space-y-2">
+          <label for="p3-q3" class="block text-sm font-bold text-forest-900">
+            3. What value is placed on the cause of their decline?
+          </label>
+          <textarea
+            id="p3-q3"
+            rows="3"
+            placeholder="Write your response using evidence from the reading..."
+            class="w-full rounded-xl border border-stone-300 bg-stonebg p-3 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest-700"
+          ></textarea>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =================================================================== -->
+  <!-- FOOTER WITH RESET PROGRESS CONTROL                                  -->
+  <!-- =================================================================== -->
+  <footer class="bg-stone-100 border-t border-stone-200 py-5 px-4 sm:px-6 text-xs text-stone-600">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <span>Conservation Biology &bull; Wildlife Biodiversity &amp; Human-Elephant Coexistence Investigation</span>
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          id="reset-trigger-btn"
+          onclick="showResetConfirm()"
+          class="px-3.5 py-1.5 rounded-xl border border-stone-300 bg-white hover:bg-red-50 hover:border-red-300 hover:text-red-700 text-stone-700 font-semibold transition cursor-pointer"
+        >
+          Reset All Progress
+        </button>
+        <div id="reset-confirm-bar" class="hidden flex items-center gap-2 bg-red-50 border border-red-300 rounded-xl px-3 py-1">
+          <span class="text-red-800 font-semibold">Clear all saved answers?</span>
+          <button
+            type="button"
+            onclick="confirmResetAll()"
+            class="px-2.5 py-1 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold cursor-pointer"
+          >
+            Yes, Reset
+          </button>
+          <button
+            type="button"
+            onclick="cancelReset()"
+            class="px-2.5 py-1 rounded-lg bg-white border border-stone-300 text-stone-700 font-semibold cursor-pointer"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =================================================================== -->
+  <!-- JAVASCRIPT: STATE MANAGEMENT, QUICK CHECK COLLAPSE & AUTO-SAVE      -->
+  <!-- =================================================================== -->
+  <script>
+    const STORAGE_KEY = 'biodiversity_values_conflict_v2';
+
+    const BIO_SPOTLIGHTS = {
+      environmental: {
+        title: 'Elephant Spotlight — Environmental Value',
+        body: 'Elephants act as keystone ecosystem engineers: they disperse seeds across miles of savanna and forest, clear dense woody brush to maintain grasslands for grazing herds, and excavate dry riverbeds to uncover water for other wildlife.'
+      },
+      aesthetic: {
+        title: 'Elephant Spotlight — Aesthetic Value',
+        body: 'Humans across the globe admire the grace, intelligence, and close family bonds of elephants in wildlife photography, art, storytelling, and nature films.'
+      },
+      economic: {
+        title: 'Elephant Spotlight — Economic Value',
+        body: 'Living elephant populations anchor ecotourism industries that fund conservation parks, ranger salaries, and local community livelihoods—though agricultural crop losses and illegal ivory markets create competing economic pressures.'
+      },
+      intrinsic: {
+        title: 'Elephant Spotlight — Intrinsic Value',
+        body: 'Intrinsic value holds that elephants possess inherent worth simply as living, sentient creatures with an evolutionary right to exist, independent of any direct usefulness to humans.'
+      }
+    };
+
+    const QC_KEY = {
+      'qc-1': 'economic',
+      'qc-2': 'environmental',
+      'qc-3': 'aesthetic',
+      'qc-4': 'intrinsic'
+    };
+
+    const TEXT_FIELD_IDS = [
+      'p1-q1',
+      'p1-q2',
+      'p2-reflection',
+      'lens-western',
+      'lens-local',
+      'p3-q1',
+      'p3-q2',
+      'p3-q3'
+    ];
+
+    let quickCheckPassed = false;
+    let selectedPersonalValues = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      restoreState();
+
+      TEXT_FIELD_IDS.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', () => {
+            persistState();
+            updateProgressBar();
+          });
+        }
+      });
+
+      Object.keys(QC_KEY).forEach((id) => {
+        const sel = document.getElementById(id);
+        if (sel) {
+          sel.addEventListener('change', persistState);
+        }
+      });
+
+      updateProgressBar();
+    });
+
+    // ==================== PART 1 & 3 TOGGLE HELPERS ====================
+    function toggleVisibility(boxId, btnEl, closedLabel, openLabel) {
+      const box = document.getElementById(boxId);
+      if (!box) return;
+      const isHidden = box.classList.contains('hidden');
+      box.classList.toggle('hidden');
+      const span = btnEl.querySelector('span');
+      if (span) {
+        span.textContent = isHidden ? openLabel : closedLabel;
+      }
+    }
+
+    // ==================== PART 2: 2x2 CARD SPOTLIGHT ====================
+    function selectBioCard(key) {
+      ['environmental', 'aesthetic', 'economic', 'intrinsic'].forEach((k) => {
+        const card = document.getElementById(`bio-card-${k}`);
+        if (!card) return;
+        if (k === key) {
+          card.className = 'text-left rounded-2xl border-2 border-forest-900 bg-forest-50/75 p-5 shadow-xs transition hover:shadow-md cursor-pointer space-y-2';
+        } else {
+          card.className = 'text-left rounded-2xl border border-stone-200 bg-stonebg p-5 shadow-xs transition hover:border-forest-700 hover:shadow-md cursor-pointer space-y-2';
+        }
+      });
+
+      const info = BIO_SPOTLIGHTS[key];
+      if (info) {
+        document.getElementById('spotlight-title').textContent = info.title;
+        document.getElementById('spotlight-body').textContent = info.body;
+      }
+    }
+
+    // ==================== PART 2: QUICK CHECK & COLLAPSE TRANSITION ====================
+    function checkQuickCheck() {
+      let correctCount = 0;
+
+      Object.entries(QC_KEY).forEach(([id, expected]) => {
+        const sel = document.getElementById(id);
+        const fb = document.getElementById(`${id}-fb`);
+        if (!sel || !fb) return;
+
+        fb.classList.remove('hidden');
+        if (sel.value === expected) {
+          correctCount++;
+          sel.classList.remove('border-red-400', 'bg-red-50');
+          sel.classList.add('border-emerald-500', 'bg-emerald-50');
+          fb.className = 'text-xs font-semibold text-emerald-700';
+          fb.textContent = 'Correct!';
+        } else {
+          sel.classList.remove('border-emerald-500', 'bg-emerald-50');
+          sel.classList.add('border-red-400', 'bg-red-50');
+          fb.className = 'text-xs font-semibold text-warmamber-700';
+          fb.textContent = sel.value
+            ? 'Not quite—compare this scenario with the 4 definitions above.'
+            : 'Please select a biodiversity value.';
+        }
+      });
+
+      const banner = document.getElementById('qc-status-banner');
+      banner.classList.remove('hidden');
+
+      if (correctCount === 4) {
+        quickCheckPassed = true;
+        persistState();
+        updateProgressBar();
+
+        banner.className = 'rounded-xl p-3.5 text-xs sm:text-sm font-bold bg-emerald-100 border border-emerald-400 text-emerald-900';
+        banner.textContent = 'All 4 scenarios matched! Collapsing Quick Check...';
+
+        setTimeout(() => {
+          const qcCard = document.getElementById('quick-check-card');
+          const reviewLink = document.getElementById('review-qc-link');
+
+          qcCard.classList.add('fade-out-state');
+          setTimeout(() => {
+            qcCard.style.display = 'none';
+            qcCard.classList.remove('fade-out-state');
+            if (reviewLink) {
+              reviewLink.classList.remove('hidden');
+              reviewLink.textContent = 'Review Quick Check';
+            }
+          }, 380);
+        }, 850);
+      } else {
+        banner.className = 'rounded-xl p-3.5 text-xs sm:text-sm font-bold bg-warmamber-50 border border-warmamber-500/40 text-warmamber-700';
+        banner.textContent = `You matched ${correctCount} of 4 scenarios. Fix the highlighted dropdown(s) and click "Check Answers" again.`;
+      }
+    }
+
+    function toggleReviewQuickCheck() {
+      const qcCard = document.getElementById('quick-check-card');
+      const link = document.getElementById('review-qc-link');
+      const isHidden = qcCard.style.display === 'none';
+
+      if (isHidden) {
+        qcCard.style.display = 'block';
+        qcCard.style.opacity = '1';
+        link.textContent = 'Hide Quick Check';
+      } else {
+        qcCard.style.display = 'none';
+        link.textContent = 'Review Quick Check';
+      }
+    }
+
+    // ==================== PART 2: MULTI-SELECT PERSONAL VALUES ====================
+    function togglePersonalValue(val) {
+      const idx = selectedPersonalValues.indexOf(val);
+      if (idx === -1) {
+        selectedPersonalValues.push(val);
+      } else {
+        selectedPersonalValues.splice(idx, 1);
+      }
+      renderPersonalValuePills();
+      persistState();
+      updateProgressBar();
+    }
+
+    function renderPersonalValuePills() {
+      document.querySelectorAll('.multi-val-pill').forEach((btn) => {
+        const val = btn.getAttribute('data-value');
+        const checkSpan = btn.querySelector('.pill-check');
+        const active = selectedPersonalValues.includes(val);
+
+        if (active) {
+          btn.className = 'multi-val-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-forest-900 bg-forest-900 text-white text-xs sm:text-sm font-bold shadow-xs transition cursor-pointer';
+          if (checkSpan) checkSpan.classList.remove('hidden');
+        } else {
+          btn.className = 'multi-val-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone-300 bg-white text-xs sm:text-sm font-bold text-stone-700 hover:border-forest-700 transition cursor-pointer';
+          if (checkSpan) checkSpan.classList.add('hidden');
+        }
+      });
+
+      const readout = document.getElementById('selected-values-readout');
+      if (readout) {
+        if (selectedPersonalValues.length > 0) {
+          readout.innerHTML = `Selected values (${selectedPersonalValues.length}): <span class="text-forest-900 font-bold">${selectedPersonalValues.join(', ')}</span>`;
+        } else {
+          readout.innerHTML = 'Selected values: <span class="italic text-stone-500">None selected yet (click one or more pills above)</span>';
+        }
+      }
+    }
+
+    // ==================== PROGRESS BAR ====================
+    function updateProgressBar() {
+      // 10 completion milestones:
+      // 2 Part 1 textareas + 1 Quick Check passed + 1 Multi-value pill selection + 1 Part 2 reflection + 2 T-chart textareas + 3 Part 3 synthesis textareas
+      let completed = 0;
+      const total = 10;
+
+      const requiredTextareas = [
+        'p1-q1',
+        'p1-q2',
+        'p2-reflection',
+        'lens-western',
+        'lens-local',
+        'p3-q1',
+        'p3-q2',
+        'p3-q3'
+      ];
+
+      requiredTextareas.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && el.value.trim().length > 0) completed++;
+      });
+
+      if (quickCheckPassed) completed++;
+      if (selectedPersonalValues.length > 0) completed++;
+
+      const pct = Math.round((completed / total) * 100);
+      document.getElementById('progress-text').textContent = `${pct}%`;
+      document.getElementById('progress-bar').style.width = `${pct}%`;
+    }
+
+    // ==================== LOCAL STORAGE PERSISTENCE ====================
+    function persistState() {
+      try {
+        const data = {
+          text: {},
+          qc: {},
+          quickCheckPassed,
+          selectedPersonalValues
+        };
+
+        TEXT_FIELD_IDS.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) data.text[id] = el.value;
+        });
+
+        Object.keys(QC_KEY).forEach((id) => {
+          const sel = document.getElementById(id);
+          if (sel) data.qc[id] = sel.value;
+        });
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } catch (e) {
+        // Ignore storage errors if blocked
+      }
+    }
+
+    function restoreState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const data = JSON.parse(raw);
+
+        if (data.text) {
+          TEXT_FIELD_IDS.forEach((id) => {
+            const el = document.getElementById(id);
+            if (el && typeof data.text[id] === 'string') {
+              el.value = data.text[id];
+            }
+          });
+        }
+
+        if (data.qc) {
+          Object.keys(QC_KEY).forEach((id) => {
+            const sel = document.getElementById(id);
+            if (sel && typeof data.qc[id] === 'string') {
+              sel.value = data.qc[id];
+            }
+          });
+        }
+
+        if (Array.isArray(data.selectedPersonalValues)) {
+          selectedPersonalValues = data.selectedPersonalValues;
+          renderPersonalValuePills();
+        }
+
+        if (data.quickCheckPassed === true) {
+          quickCheckPassed = true;
+          Object.entries(QC_KEY).forEach(([id, expected]) => {
+            const sel = document.getElementById(id);
+            const fb = document.getElementById(`${id}-fb`);
+            if (sel) {
+              sel.value = expected;
+              sel.classList.add('border-emerald-500', 'bg-emerald-50');
+            }
+            if (fb) {
+              fb.classList.remove('hidden');
+              fb.className = 'text-xs font-semibold text-emerald-700';
+              fb.textContent = 'Correct!';
+            }
+          });
+
+          const qcCard = document.getElementById('quick-check-card');
+          const reviewLink = document.getElementById('review-qc-link');
+          qcCard.style.display = 'none';
+          if (reviewLink) {
+            reviewLink.classList.remove('hidden');
+            reviewLink.textContent = 'Review Quick Check';
+          }
+        }
+      } catch (e) {
+        // Ignore parse errors
+      }
+    }
+
+    // ==================== RESET ALL PROGRESS ====================
+    function showResetConfirm() {
+      document.getElementById('reset-trigger-btn').classList.add('hidden');
+      document.getElementById('reset-confirm-bar').classList.remove('hidden');
+    }
+
+    function cancelReset() {
+      document.getElementById('reset-confirm-bar').classList.add('hidden');
+      document.getElementById('reset-trigger-btn').classList.remove('hidden');
+    }
+
+    function confirmResetAll() {
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {
+        // Ignore storage errors
+      }
+
+      TEXT_FIELD_IDS.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+
+      Object.keys(QC_KEY).forEach((id) => {
+        const sel = document.getElementById(id);
+        const fb = document.getElementById(`${id}-fb`);
+        if (sel) {
+          sel.value = '';
+          sel.classList.remove('border-emerald-500', 'bg-emerald-50', 'border-red-400', 'bg-red-50');
+        }
+        if (fb) fb.classList.add('hidden');
+      });
+
+      quickCheckPassed = false;
+      selectedPersonalValues = [];
+      renderPersonalValuePills();
+
+      const qcCard = document.getElementById('quick-check-card');
+      const qcBanner = document.getElementById('qc-status-banner');
+      const reviewLink = document.getElementById('review-qc-link');
+      qcCard.style.display = 'block';
+      qcCard.style.opacity = '1';
+      qcBanner.classList.add('hidden');
+      if (reviewLink) reviewLink.classList.add('hidden');
+
+      updateProgressBar();
+      cancelReset();
+    }
+  </script>
+</body>
+</html>
